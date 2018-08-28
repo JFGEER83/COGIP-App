@@ -8,7 +8,7 @@
 - **Deadline** : `Tuesday 04/09 at 17:00`
 
 - **Made by**  
-  - [Marco Bove](https://github.com/)
+  - [Marco Bove](https://github.com/marcomisco)
   - [Marie Louise Ogdoc](https://github.com/OGlou7)
   - [Jean-François Geerinckx](https://github.com/JFGEER83)
 
