@@ -25,7 +25,7 @@ https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp
 
 
 ## Workbench
-![Mockup](assets\img\COGIapp_Diagram.JPG)
+![Mockup](assets\img\cogip_img.JPG)
 
 
 ## Problems encountered
