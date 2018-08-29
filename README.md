@@ -1,6 +1,5 @@
 # COGIP-App
 
-
 - **Repository**: `COGIP-App`
 
 - **Duration** : `5 Days`
@@ -14,7 +13,7 @@
 
 
 - **Where?**
- A project done while in the training at [Becode](https://github.com/becodeorg/)
+ A project done while in training at [Becode](https://github.com/becodeorg/)
 
 
 ## About the Project
@@ -30,23 +29,22 @@ https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp
 
 ## What [Marco Bove](https://github.com/marcomisco) did :
 
-*
+* Invoices (CRUD, page, detailpage)
 *
 *
 
 ## What [Marie Louise Ogdoc](https://github.com/OGlou7) did :
 
-*
-*
+* Workbench
+* Contacts (CRUD, page, detailpage)
 *
 
 
 ## What [Jean-François Geerinckx](https://github.com/JFGEER83) did :
 
+* DB
+* Companies (CRUD, page, detailpage)
 *
-*
-*
-
 
 
 ## Lighthouse Test
