@@ -24,7 +24,7 @@ https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp
 
 
 ## Workbench
-![Workbench](./assets/img/cogip_img.JPG)
+![Workbench](./assets/img/cogip_app_img.JPG)
 
 
 ## What [Marco Bove](https://github.com/marcomisco) did :
