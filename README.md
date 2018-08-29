@@ -25,14 +25,28 @@ https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp
 
 
 ## Workbench
-![Mockup](assets\img\cogip_img.JPG)
+![Workbench](assets\img\cogip_img.JPG)
 
 
-## Problems encountered
+## What [Marco Bove](https://github.com/marcomisco) did :
 
 *
 *
 *
+
+## What [Marie Louise Ogdoc](https://github.com/OGlou7) did :
+
+*
+*
+*
+
+
+## What [Jean-François Geerinckx](https://github.com/JFGEER83) did :
+
+*
+*
+*
+
 
 
 ## Lighthouse Test
