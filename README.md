@@ -29,8 +29,8 @@ https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp
 
 ## What [Marco Bove](https://github.com/marcomisco) did :
 
+* DB
 * Invoices (CRUD, page, detailpage)
-*
 *
 
 ## What [Marie Louise Ogdoc](https://github.com/OGlou7) did :
