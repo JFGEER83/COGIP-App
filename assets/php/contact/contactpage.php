@@ -26,7 +26,7 @@ catch(Exception $e)
       <th>email</th>
     <?php while ($donnees= $resultat ->fetch() ){ ?>
       <tr>
-        <td><a href="./detailcontact.php?id=<?= $donnees['idPERSONNES']; ?>"><?= $donnees['nom_personne']; ?></a> </td>
+        <td><a href="./detailcontact.php?id=<?= $donnees['idPERSONNES']; ?>"><?= $donnees['nom_personne']; ?></a></td>
         <td><?= $donnees['prenom_presonne']; ?></td>
         <td><?= $donnees['telephone_personne']; ?></td>
         <td><?= $donnees['email_personne']; ?></td>

@@ -9,6 +9,15 @@ catch(Exception $e)
 {
 	die('Erreur : '.$e->getMessage());
 }
+if (isset($_POST["delete"])) {
+	foreach ($_POST["delete"] as $todel) {
+		$remove= $bdd->prepare('DELETE FROM personnes WHERE nom_personne=:nom');
+		$remove->bindParam(':nom', $nom);
+		$nom=$todel;
+		$remove->execute();
+		header('refresh:0');
+	}
+};
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,8 +44,8 @@ catch(Exception $e)
             <td><?= $donnees['prenom_presonne']; ?></td>
             <td><?= $donnees['telephone_personne']; ?></td>
             <td><?= $donnees['email_personne']; ?></td>
-						<td> <a href="../CRUD/update.php?id=<?= $donnees['idPERSONNES']; ?>">Modifier</a> </td>
-						<td> <a href="../CRUD/delete.php?id=<?= $donnees['idPERSONNES']; ?>"><i class="far fa-trash-alt"type="submit" name="supprimer" value="supprimer"></i>
+						<td><a href="../CRUD/update.php?id=<?= $donnees['idPERSONNES']; ?>">Modifier</a> </td>
+						<td><a href="../CRUD/read.php?id=<?= $donnees['idPERSONNES']; ?>"><i class="far fa-trash-alt"type="submit" name="delete" value="delete"></i>
 						 </td>
           </tr>
 

@@ -8,13 +8,14 @@
         $requete->execute();
         $requete->closeCursor();
     }else{
-        $id=$_GET['id']; 
+        $id=$_GET['id'];
     }
     $sql="SELECT * FROM personnes WHERE idPERSONNES = $id";
     $requete->execute();
     $donnees = $requete->fetch();
     $requete->closeCursor();
-
+    }
+  ;
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
