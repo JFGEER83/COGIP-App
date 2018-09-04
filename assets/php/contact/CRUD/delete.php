@@ -10,7 +10,6 @@
   		header('refresh:0');
   	}
   };
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -20,7 +19,7 @@
   </head>
   <body>
     <section>
-        <form action="delete.php" method="post">
+        <form action="" method="post">
           <label for="nom">Nom : </label>
           <input type="text" name="nom_personne" id="nom"><br>
 

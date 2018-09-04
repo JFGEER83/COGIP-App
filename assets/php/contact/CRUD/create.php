@@ -7,8 +7,8 @@ try
   {
     die('Erreur : '.$e->getMessage());
   }
-    $contact = $bdd->query('SELECT * FROM personnes');
-    $message = "";
+  $contact = $bdd->query('SELECT * FROM personnes');
+  $message = "";
   if(isset($_POST['create'])){
     $nom = filter_var($_POST['nom_personne'], FILTER_SANITIZE_STRING);
     $prenom = filter_var($_POST['prenom_presonne'], FILTER_SANITIZE_STRING);
@@ -16,18 +16,18 @@ try
     $email = filter_var($_POST['email_personne'], FILTER_SANITIZE_EMAIL);
     $valid_email = filter_var($email, FILTER_VALIDATE_EMAIL);
     $societe = $_POST['societe_personne'];
-    if(!empty($nom) && !empty($prenom) && !empty($phone) && !empty($valid_email)) {
-      $add_value = $bdd->prepare('INSERT INTO personnes(nom_personne, prenom_presonne, telephone_personne, email_personne, SOCIETES_idSOCIETES) VALUES(:nom, :prenom, :telephone, :email, :societe)');
-      $add_value->bindParam(':nom', $nom);
-      $add_value->bindParam(':prenom', $prenom);
-      $add_value->bindParam(':telephone', $phone);
-      $add_value->bindParam(':email', $valid_email);
-      $add_value->bindParam(':societe', $societe);
-      $add_value->execute();
-      header('location:read.php'); //change de page apres execute
-      $message = "A été ajoutée !";
+  if(!empty($nom) && !empty($prenom) && !empty($phone) && !empty($valid_email)) {
+    $add_value = $bdd->prepare('INSERT INTO personnes(nom_personne, prenom_presonne, telephone_personne, email_personne, SOCIETES_idSOCIETES) VALUES(:nom, :prenom, :telephone, :email, :societe)');
+    $add_value->bindParam(':nom', $nom);
+    $add_value->bindParam(':prenom', $prenom);
+    $add_value->bindParam(':telephone', $phone);
+    $add_value->bindParam(':email', $valid_email);
+    $add_value->bindParam(':societe', $societe);
+    $add_value->execute();
+    header('location:read.php'); //change de page apres execute
+    $message = "A été ajoutée !";
   }else{
-      $message = "N'a pas été ajoutée !";
+    $message = "N'a pas été ajoutée !";
     }
   }
  ?>
