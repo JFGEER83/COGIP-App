@@ -41,7 +41,7 @@
 	<link rel="stylesheet" href="css/basics.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-	<a href="../CRUD/read.php">Liste des données</a>
+	<a href="../CRUD/read.php">Liste des contacts</a>
 	<h1>Modifier</h1>
     <form action="" method="post">
 			<input type="hidden" name="idPERSONNES" value="<?= $resultat["id"];?>">

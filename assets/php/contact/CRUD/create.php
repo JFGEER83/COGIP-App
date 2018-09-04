@@ -39,7 +39,7 @@ try
     <title></title>
   </head>
   <body>
-    <a href="./read.php">Liste des contactes</a>
+    <a href="./read.php">Liste des contacts</a>
     <section>
     <form action="" method="post">
       <label for="nom">Nom : </label>
