@@ -1,7 +1,7 @@
 <?php
 try
   {
-  $bdd = new PDO('mysql:host=localhost;dbname=apps_cogip;charset=utf8', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=apps_cogip;charset=utf8', 'root', '12345678');
   }
   catch(Exception $e)
   {
@@ -31,6 +31,60 @@ try
     }
   }
  ?>
+
+
+<?php
+
+
+
+
+  $contact2 = $bdd->query('SELECT * FROM FACTURES');
+  $message2 = "";
+  if(isset($_POST['create'])){
+    $nom = filter_var($_POST['numero_facture'], FILTER_SANITIZE_STRING);
+    $prenom = filter_var($_POST['date_facture'], FILTER_SANITIZE_STRING);
+    $phone = filter_var($_POST['motif_prestation_facture'], FILTER_SANITIZE_NUMBER_INT);
+
+  if(!empty($nom) && !empty($prenom) && !empty($phone)) {
+    $add_value = $bdd->prepare('INSERT INTO FACTURES (numero_facture, date_facture, motif_prestation_facture) VALUES(:numero, :date, :motif)');
+    $add_value->bindParam(':numero', $numero);
+    $add_value->bindParam(':date', $date);
+    $add_value->bindParam(':motif', $motif);
+
+    $add_value->execute();
+    header('location:read.php'); //change de page apres execute
+    $message2 = "A été ajoutée !";
+  }else{
+    $message2 = "N'a pas été ajoutée !";
+    }
+  }
+ ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

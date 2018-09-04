@@ -63,6 +63,62 @@ $membres = $bdd ->query ('SELECT*FROM FACTURES ORDER BY idFACTURES DESC LIMIT 0,
 
 
 
+
+//confirmer (faire une colonne confirme dans phpmyadmin)
+if(isset($_GET['confirme']) AND !empty($_GET['confirme'])) {
+    $confirme = (int) $_GET['confirme'];
+    
+    $req = $bdd->prepare('UPDATE SOCIETES SET confirme = 1 WHERE idSOCIETES = ?');
+    $req->execute(array($confirme));
+ }
+
+ //suprimer
+ if(isset($_GET['supprime']) AND !empty($_GET['supprime'])) {
+    $supprime = (int) $_GET['supprime'];
+    $req = $bdd->prepare('DELETE FROM SOCIETES WHERE idSOCIETES = ?');
+    $req->execute(array($supprime));
+ }
+
+//afficher les 5 premiers
+$membres2 = $bdd ->query ('SELECT*FROM SOCIETES ORDER BY idSOCIETES DESC LIMIT 0,5');
+
+
+
+
+
+
+//confirmer (faire une colonne confirme dans phpmyadmin)
+if(isset($_GET['confirme']) AND !empty($_GET['confirme'])) {
+    $confirme = (int) $_GET['confirme'];
+    
+    $req = $bdd->prepare('UPDATE PERSONNES SET confirme = 1 WHERE idPERSONNES = ?');
+    $req->execute(array($confirme));
+ }
+
+ //suprimer
+ if(isset($_GET['supprime']) AND !empty($_GET['supprime'])) {
+    $supprime = (int) $_GET['supprime'];
+    $req = $bdd->prepare('DELETE FROM PERSONNES WHERE idPERSONNES = ?');
+    $req->execute(array($supprime));
+ }
+
+
+
+
+
+
+
+$membres3 = $bdd ->query ('SELECT*FROM PERSONNES ORDER BY idPERSONNES DESC LIMIT 0,5');
+
+
+
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -136,6 +192,35 @@ $membres = $bdd ->query ('SELECT*FROM FACTURES ORDER BY idFACTURES DESC LIMIT 0,
 
 
 
+<!-- les personnes -->
+<H2>Mes 5 dernières sociétés</H2>
+           <?php while($m = $membres3 -> fetch()){ ?>
+<li><?= $m['idPERSONNES'] ?> 
+
+: <?=$m['prenom_presonne'] ?>
+
+
+
+
+
+
+    <!-- confirmer un membre -->
+    <?php if($m['confirme'] == 0){?> - <a href="index.php?confirme=
+ <?= $m['idPERSONNES'] ?>">confirmer</a><?php } ?>
+ 
+
+<!-- supprimer un membre -->
+- <a href="index8.php?supprime=<?= $m['idPERSONNES']?>">supprimer</a></li>
+
+
+      
+        <?php } ?>
+
+
+   <a href="">voir toutes les personnes</a>   
+
+
+
 
 
 
@@ -160,3 +245,19 @@ H3{
 }
 </style>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
