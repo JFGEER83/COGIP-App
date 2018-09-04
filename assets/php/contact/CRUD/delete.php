@@ -1,18 +1,16 @@
 <?php
   try
-    {
-    if(isset($_POST['delete']))
-    {
-        $id=$_POST['id'];
-        $sql="DELETE FROM personnes WHERE idPERSONNES = $id";
-        $requete->execute();
-        $requete->closeCursor();
-    }else{
-        $id=$_GET['id'];
-    }
+  {
+  if (isset($_POST["delete"])) {
+  	foreach ($_POST["delete"] as $todel) {
+  		$remove= $bdd->prepare('DELETE FROM personnes WHERE nom_personne=:nom');
+  		$remove->bindParam(':nom', $nom);
+  		$nom=$todel;
+  		$remove->execute();
+  		header('refresh:0');
+  	}
+  };
 
-    }
-  ;
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -35,10 +33,6 @@
           <label for="email">Email: </label>
           <input type="text" name="email_personne" id="email"><br>
 
-          <?php foreach ($type as $key => $value) { ?>
-              <input type="radio" name="type" id="type<?=$value['id']?>" value='<?=$value['id']?>' <?=$checkType[$value['id']]?>><label for="type<?=$value['id']?>"><?=$value['type']?></label>
-              <?php } ?>
-          <br>
           <button type="submit" name="delete">Supprimer</button>
       </form>
     </section>

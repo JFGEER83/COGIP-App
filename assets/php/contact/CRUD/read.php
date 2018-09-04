@@ -2,6 +2,13 @@
 try
 {
 	$bd = new PDO('mysql:host=localhost;dbname=apps_cogip;charset=utf8', 'root', '');
+	//DELETE
+	if (isset($_POST["delete"])) {
+			$remove= $bd->prepare('DELETE FROM personnes WHERE idPERSONNES=:id');
+			$remove->bindParam(':id', $id);
+			$id=$_POST["delete"];
+			$remove->execute();
+	};
   $resultat = $bd->query('SELECT * FROM PERSONNES ORDER BY nom_personne ASC');
 	$donnees='';
 }
@@ -9,15 +16,7 @@ catch(Exception $e)
 {
 	die('Erreur : '.$e->getMessage());
 }
-if (isset($_POST["delete"])) {
-	foreach ($_POST["delete"] as $todel) {
-		$remove= $bdd->prepare('DELETE FROM personnes WHERE nom_personne=:nom');
-		$remove->bindParam(':nom', $nom);
-		$nom=$todel;
-		$remove->execute();
-		header('refresh:0');
-	}
-};
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,29 +28,33 @@ if (isset($_POST["delete"])) {
   </head>
   <body>
     <h1>Liste des contactes</h1>
+		<form class="" action="" method="post">
+
     <table>
-					<th>id</th>
-          <th>Nom</th>
-          <th>Prenom</th>
-          <th>Téléphone</th>
-          <th>email</th>
+			<th>id</th>
+	    <th>Nom</th>
+	    <th>Prenom</th>
+	    <th>Téléphone</th>
+	    <th>email</th>
 
-        <?php while ($donnees= $resultat ->fetch() ){ ?>
+	  <?php while ($donnees= $resultat ->fetch() ){ ?>
 
-          <tr>
-						<td><?= $donnees['idPERSONNES'];?></td>
-            <td><?= $donnees['nom_personne']; ?></td>
-            <td><?= $donnees['prenom_presonne']; ?></td>
-            <td><?= $donnees['telephone_personne']; ?></td>
-            <td><?= $donnees['email_personne']; ?></td>
-						<td><a href="../CRUD/update.php?id=<?= $donnees['idPERSONNES']; ?>">Modifier</a> </td>
-						<td><a href="../CRUD/read.php?id=<?= $donnees['idPERSONNES']; ?>"><i class="far fa-trash-alt"type="submit" name="delete" value="delete"></i>
-						 </td>
-          </tr>
-
-      <?php
+	    <tr>
+				<td><?= $donnees['idPERSONNES'];?></td>
+	      <td><?= $donnees['nom_personne']; ?></td>
+	      <td><?= $donnees['prenom_presonne']; ?></td>
+	      <td><?= $donnees['telephone_personne']; ?></td>
+	      <td><?= $donnees['email_personne']; ?></td>
+				<td><a href="../CRUD/update.php?id=<?= $donnees['idPERSONNES']; ?>">Modifier</a> </td>
+				<td ><button type="submit" name="delete" value="<?= $donnees['idPERSONNES'] ?>"><i class="far fa-trash-alt"></i></button></td>
+			</tr>
+			<?php
 		} ?>
+			<tr>
+				<button type="submit" name="create"><a href="../CRUD/create.php?id=<?= $donnees['idPERSONNES']; ?>">Ajouter</i></button>
+			</tr>
 
     </table>
+	</form>
   </body>
 </html>
