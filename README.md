@@ -49,6 +49,8 @@ https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp
 
 ## Lighthouse Test
 
-<!-- ![Mockup]() -->
+![Lighthouse](./assets/img/lighthouse.JPG)
 
 ## Link to the final project
+
+https://miscomarco.000webhostapp.com
