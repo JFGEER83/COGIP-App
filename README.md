@@ -30,8 +30,9 @@ https://github.com/becodeorg/Johnson2/tree/master/projets/COGIPapp
 ## What [Marco Bove](https://github.com/marcomisco) did :
 
 * Invoices (CRUD, page, detailpage)
-*
-*
+* Systeme d'inscription propre
+* Login- Déconnexion
+* Acceuil personalisé
 
 ## What [Marie Louise Ogdoc](https://github.com/OGlou7) did :
 
