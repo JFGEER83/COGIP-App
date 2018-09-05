@@ -63,7 +63,8 @@
             Database::disconnect();
             header("Location: index.php");
         }
-?>
+    }    
+        ?>
 
 <!DOCTYPE html>
 <html>
@@ -139,7 +140,7 @@
                         </div>
                         </div>
                     <br />
-                        <div class="control-group  <?php echo !empty($idError)?'error':'';?>">
+                        <div class="control-group <?php echo !empty($idError)?'error':'';?>">
                                             <label class="control-label">ID fournisseur/client</label>
                         <br />
                         <div class="controls">
@@ -153,7 +154,7 @@
                         <div class="form-actions">
                                     <input type="submit" class="btn btn-success" name="submit" value="submit">
                                     <a class="btn" href="index.php">Retour</a>
-                        </div>
+                        </diPHP Intellisense CranePHP Intellisense CranePHP Intellisense CranePHP Intellisense CranePHP Intellisense CranePHP Intellisense CranePHP Intellisense Craneffgv>
                     </form>          
         </div>
         </body>
